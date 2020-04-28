@@ -17,3 +17,5 @@ tellraw @a [{"text":"--------------------","color":"green"}]
 tellraw @a ["",{"text":"Welcome to Hunters & Runners by RedSparr0w!","bold":true,"color":"gold"}]
 tellraw @a ["Join the ",{"text":"[Hunters]","color":"aqua","clickEvent":{"action":"run_command","value":"/trigger hunters.join"},"hoverEvent":{"action":"show_text","value":{"text":"Join Hunters","color":"aqua"}}}," or ",{"text":"[Runners]","color":"red","clickEvent":{"action":"run_command","value":"/trigger runners.join"},"hoverEvent":{"action":"show_text","value":{"text":"Join Runners","color":"red"}}}," team!"]
 tellraw @a [{"text":"--------------------","color":"green"}]
+
+function player_tracker:long_tick
