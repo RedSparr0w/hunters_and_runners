@@ -5,9 +5,7 @@ scoreboard objectives add ypos dummy
 scoreboard objectives add zpos dummy
 
 scoreboard objectives add hunters.join trigger
-scoreboard players enable @a hunters.join
 scoreboard objectives add runners.join trigger
-scoreboard players enable @a runners.join
 
 team add hunters
 team modify hunters color aqua
