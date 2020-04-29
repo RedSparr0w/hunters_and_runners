@@ -1,7 +1,11 @@
+#> Reset the scoreboard so this isn't run multiple times
 scoreboard players set @s hnr.hunters.join 0
 
+#> Add player to the team
 team join hunters
 team modify hunters color aqua
+
+#> Announce in chat player has joined the team
 tellraw @a [{"selector":"@s","color":"aqua"}," joined the Hunters"]
 
 #> Give the hunters a compass to track players
