@@ -2,8 +2,10 @@
 execute in minecraft:overworld run data modify storage import:pos Items[] set from entity @s Inventory[{tag:{compass_type:"tracking_device"}}]
 execute in minecraft:overworld run data modify storage import:pos Items[].Slot set value 0b
 
-#> dimension limited only to "minecraft:overworld" temporarily
-execute in minecraft:overworld run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_nether"
+#> Set dimension to our current dimension
+execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:overworld"
+execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:-1}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_nether"
+execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:1}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_end"
 
 #> imports xpos, ypos, zpos scores into import:pos{tag.LodestonePos.AXIS} tag
 execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] xpos

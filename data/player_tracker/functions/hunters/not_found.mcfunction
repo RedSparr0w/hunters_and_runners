@@ -2,7 +2,7 @@
 execute in minecraft:overworld run data modify storage import:pos Items[] set from entity @s Inventory[{tag:{compass_type:"tracking_device"}}]
 execute in minecraft:overworld run data modify storage import:pos Items[].Slot set value 0b
 
-#> dimension limited only to "minecraft:overworld" temporarily
+#> Set dimension to a different dimension than we are currently in
 execute if entity @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_nether"
 execute unless entity @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:overworld"
 
