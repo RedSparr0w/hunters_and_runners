@@ -3,8 +3,8 @@ execute in minecraft:overworld run data modify storage import:pos Items[] set fr
 execute in minecraft:overworld run data modify storage import:pos Items[].Slot set value 0b
 
 #> dimension limited only to "minecraft:overworld" temporarily
-execute in minecraft:overworld run execute if @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_nether"
-execute in minecraft:overworld run execute unless @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:overworld"
+execute if entity @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_nether"
+execute unless entity @s[team=hunters,nbt={Dimension:0}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:overworld"
 
 # modifies shulker box (at 0 1 1) Items[] tag from import:pos storage
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage import:pos Items[]
