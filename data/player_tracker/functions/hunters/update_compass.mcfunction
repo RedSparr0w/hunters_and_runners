@@ -8,9 +8,9 @@ execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:-1}] run
 execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:1}] run data modify storage import:pos Items[].tag.LodestoneDimension set value "minecraft:the_end"
 
 #> imports xpos, ypos, zpos scores into import:pos{tag.LodestonePos.AXIS} tag
-execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] xpos
-execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] ypos
-execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] zpos
+execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.xpos
+execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.ypos
+execute in minecraft:overworld run execute store result storage import:pos Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.zpos
 
 # modifies shulker box (at 0 1 1) Items[] tag from import:pos storage
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage import:pos Items[]

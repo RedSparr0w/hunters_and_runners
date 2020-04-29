@@ -1,27 +1,26 @@
+#> Load the chunk our shulker box is in
 forceload add 0 0
 setblock 0 1 1 minecraft:shulker_box
-scoreboard objectives add xpos dummy
-scoreboard objectives add ypos dummy
-scoreboard objectives add zpos dummy
-#> Our settings
-#- Show previous last tracked position in current dimension
-scoreboard objectives add hnr.settings dummy
+scoreboard objectives add hnr.xpos dummy
+scoreboard objectives add hnr.ypos dummy
+scoreboard objectives add hnr.zpos dummy
 
 #> Add triggers
-scoreboard objectives add hunters.join trigger
-scoreboard objectives add runners.join trigger
+scoreboard objectives add hnr.hunters.join trigger
+scoreboard objectives add hnr.runners.join trigger
+scoreboard objectives add hnr.information trigger
 
+#> Add teams
 team add hunters
 team modify hunters color aqua
-
 team add runners
 team modify runners color red
 
-tellraw @a [{"text":"--------------------","color":"green"}]
-tellraw @a ["",{"text":"Welcome to Hunters & Runners by RedSparr0w!","bold":true,"color":"gold"}]
-tellraw @a ["Join the ",{"text":"[Hunters]","color":"aqua","clickEvent":{"action":"run_command","value":"/trigger hunters.join"},"hoverEvent":{"action":"show_text","value":{"text":"Join Hunters","color":"aqua"}}}," or ",{"text":"[Runners]","color":"red","clickEvent":{"action":"run_command","value":"/trigger runners.join"},"hoverEvent":{"action":"show_text","value":{"text":"Join Runners","color":"red"}}}," team!"]
-tellraw @a ["View ",{"text":"[settings]","color":"aqua","clickEvent":{"action":"run_command","value":"/function player_tracker:settings/show_settings"}}]
-tellraw @a [{"text":"--------------------","color":"green"}]
-
+#> Load default settings
 function player_tracker:settings/load
+
+#> Show information to non hunter/runners
+execute as @a[team=!runners,team=!hunters] run function player_tracker:information
+
+#> Start tracking/updating compasses
 function player_tracker:long_tick
