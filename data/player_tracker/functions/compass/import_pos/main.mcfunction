@@ -15,7 +15,7 @@ execute store result storage import:pos Items[].tag.LodestonePos.Z int 1 run sco
 # modifies shulker box (at 0 1 1) Items[] tag from import:pos storage
 data modify block 0 1 1 Items[] set from storage import:pos Items[]
 
-#> checks and replaces item "tracking_compass" in both offhand and mainhand, updating LodestonePos.AXIS
+#> checks and replaces item "tracking_compass" in offhand, mainhand and last hotbar slot, updating LodestonePos.AXIS
 loot replace entity @s[nbt={SelectedItem:{tag:{compass_type:"tracking_device"}}}] weapon.mainhand mine 0 1 1 air{drop_contents:1b}
 loot replace entity @s[nbt={Inventory:[{Slot:-106b,tag:{compass_type:"tracking_device"}}]}] weapon.offhand mine 0 1 1 air{drop_contents:1b}
 loot replace entity @s[nbt={Inventory:[{Slot:8b,tag:{compass_type:"tracking_device"}}]}] hotbar.8 mine 0 1 1 air{drop_contents:1b}
