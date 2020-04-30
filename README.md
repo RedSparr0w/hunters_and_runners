@@ -6,6 +6,11 @@ Made for Java Edition 1.16+
 ## Download:
 https://github.com/RedSparr0w/hunters_and_runners/releases/latest/download/hunters_and_runners.zip
 
+## Information:
+The closest Runner to the Hunter will be tracked.
+Multiple Hunters and Runners are supported.
+Runners can be tracked in the Overworld, Nether and End dimensions.
+
 ## Usage:
 
 View settings/select a team:
