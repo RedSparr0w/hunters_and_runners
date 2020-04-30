@@ -10,6 +10,8 @@ execute in minecraft:overworld run execute store result storage hnr:compass Item
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.ypos
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.zpos
 execute in minecraft:overworld run data merge block 0 2 1 {Text1:'{"selector":"@e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}]"}'}
+execute in minecraft:overworld if score rename_compass_to_runner hnr.settings matches 1 run data modify storage hnr:compass Items[].tag.display.Name set from block 0 2 1 Text1
+execute in minecraft:overworld if score rename_compass_to_runner hnr.settings matches 0 run data modify storage hnr:compass Items[].tag.display.Name set value '{"text":"Tracking Compass"}'
 
 #> updates shulker box from hnr:compass storage Items[]
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage hnr:compass Items[]

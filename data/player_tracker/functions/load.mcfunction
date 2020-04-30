@@ -1,5 +1,6 @@
-#> Load the chunk our shulker box and sign is in
+#> Load the chunk our shulker box and sign is in and surround it with bedrock
 forceload add 0 0
+fill -1 1 2 1 3 0 minecraft:bedrock
 setblock 0 1 1 minecraft:shulker_box
 setblock 0 2 1 minecraft:crimson_sign
 
