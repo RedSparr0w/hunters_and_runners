@@ -21,10 +21,10 @@ team add runners
 team modify runners color red
 
 #> Load default settings
-function player_tracker:settings/load
+function hunters_and_runners:settings/load
 
 #> Show information to non hunter/runners
-execute as @a[team=!runners,team=!hunters] run function player_tracker:information
+execute as @a[team=!runners,team=!hunters] run function hunters_and_runners:information
 
 #> Start tracking/updating compasses
-function player_tracker:long_tick
+function hunters_and_runners:long_tick
