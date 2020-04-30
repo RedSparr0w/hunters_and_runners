@@ -3,16 +3,16 @@ execute in minecraft:overworld run data modify storage hnr:compass Items[] set f
 execute in minecraft:overworld run data modify storage hnr:compass Items[].Slot set value 0b
 
 #> Set dimension to our current dimension
-execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:0}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
-execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:-1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
-execute in minecraft:overworld if entity @s[team=hunters,nbt={Dimension:1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
+execute in minecraft:overworld if entity @s[nbt={Dimension:0}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
+execute in minecraft:overworld if entity @s[nbt={Dimension:-1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
+execute in minecraft:overworld if entity @s[nbt={Dimension:1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
 
-#> imports xpos, ypos, zpos scores into hnr:compass{tag.LodestonePos.AXIS} tag
+#> updates x, y and z positions of the compass
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.xpos
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.ypos
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.zpos
 
-# modifies shulker box (at 0 1 1) Items[] tag from hnr:compass storage
+#> updates shulker box from hnr:compass storage Items[]
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage hnr:compass Items[]
 
 #> checks and replaces item "tracking_compass" in offhand, mainhand and last hotbar slot, updating LodestonePos.AXIS
