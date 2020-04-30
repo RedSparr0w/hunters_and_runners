@@ -3,14 +3,13 @@ execute in minecraft:overworld run data modify storage hnr:compass Items[] set f
 execute in minecraft:overworld run data modify storage hnr:compass Items[].Slot set value 0b
 
 #> Set dimension to our current dimension
-execute in minecraft:overworld if entity @s[nbt={Dimension:0}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
-execute in minecraft:overworld if entity @s[nbt={Dimension:-1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
-execute in minecraft:overworld if entity @s[nbt={Dimension:1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
+execute in minecraft:overworld run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
 
 #> updates x, y and z positions of the compass
-execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.xpos
-execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.ypos
-execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest] hnr.zpos
+execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.xpos
+execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.ypos
+execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.zpos
+execute in minecraft:overworld run data merge block 0 2 1 {Text1:'{"selector":"@e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}]"}'}
 
 #> updates shulker box from hnr:compass storage Items[]
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage hnr:compass Items[]

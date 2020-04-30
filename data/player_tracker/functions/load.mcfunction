@@ -1,6 +1,9 @@
 #> Load the chunk our shulker box is in
+#> Load the chunk our shulker box and sign is in
 forceload add 0 0
 setblock 0 1 1 minecraft:shulker_box
+
+#> Create scoreboard for player info
 scoreboard objectives add hnr.xpos dummy
 scoreboard objectives add hnr.ypos dummy
 scoreboard objectives add hnr.zpos dummy
