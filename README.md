@@ -10,6 +10,8 @@ View settings/select a team:
 _If you die as a Hunter, just re-select the Hunter team to get a new compass._
 
 ## Settings:
+_Can only be changed by ops_
+
 Show Runner last position
 - When enabled, the compass will show the last position the runner was located before changing dimensions.
 When disabled, the compass will show as if there is no target
