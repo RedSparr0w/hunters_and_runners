@@ -8,6 +8,7 @@ setblock 0 2 1 minecraft:crimson_sign
 scoreboard objectives add hnr.xpos dummy
 scoreboard objectives add hnr.ypos dummy
 scoreboard objectives add hnr.zpos dummy
+scoreboard objectives add hnr.runners.hp health
 
 #> Add triggers
 scoreboard objectives add hnr.hunters.join trigger
