@@ -4,16 +4,20 @@ fill -1 1 2 1 3 0 minecraft:bedrock
 setblock 0 1 1 minecraft:shulker_box
 setblock 0 2 1 minecraft:crimson_sign
 
-#> Create scoreboard for player info
+#> Create scoreboards for player info
+##> Settings
+scoreboard objectives add hnr.settings dummy
+##> Runner positions
 scoreboard objectives add hnr.xpos dummy
 scoreboard objectives add hnr.ypos dummy
 scoreboard objectives add hnr.zpos dummy
+##> Runner death event
 scoreboard objectives add hnr.runners.hp health
 
 #> Add triggers
+scoreboard objectives add hnr.information trigger
 scoreboard objectives add hnr.hunters.join trigger
 scoreboard objectives add hnr.runners.join trigger
-scoreboard objectives add hnr.information trigger
 
 #> Add teams
 team add hunters
