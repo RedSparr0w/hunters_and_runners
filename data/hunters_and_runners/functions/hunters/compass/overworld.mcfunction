@@ -6,14 +6,14 @@ execute in minecraft:overworld run data modify storage hnr:compass Items[].Slot 
 execute in minecraft:overworld run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
 
 #> updates x, y and z positions of the compass
-execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.xpos
-execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.ypos
-execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] hnr.zpos
-tag @e[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] add tracking
-execute in minecraft:overworld run data merge block 0 2 1 {Text1:'{"selector":"@e[tag=tracking]"}'}
+tag @a[team=runners,limit=1,sort=nearest,nbt={Dimension:0}] add tracking
+execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run scoreboard players get @a[tag=tracking,limit=1,sort=nearest] hnr.xpos
+execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @a[tag=tracking,limit=1,sort=nearest] hnr.ypos
+execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @a[tag=tracking,limit=1,sort=nearest] hnr.zpos
+execute in minecraft:overworld run data merge block 0 2 1 {Text1:'{"selector":"@a[tag=tracking]"}'}
 execute in minecraft:overworld if score rename_compass_to_runner hnr.settings matches 1 run data modify storage hnr:compass Items[].tag.display.Name set from block 0 2 1 Text1
 execute in minecraft:overworld if score rename_compass_to_runner hnr.settings matches 0 run data modify storage hnr:compass Items[].tag.display.Name set value '{"text":"Tracking Compass"}'
-tag @e[tag=tracking] remove tracking
+tag @a[tag=tracking] remove tracking
 
 #> updates shulker box from hnr:compass storage Items[]
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage hnr:compass Items[]
