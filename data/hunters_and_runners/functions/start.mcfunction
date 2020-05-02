@@ -1,3 +1,7 @@
+gamemode survival @a[team=hunters]
+gamemode survival @a[team=runners]
+
+tp @a @s
 spreadplayers ~ ~ 0 10 false @a
 
 effect clear @a
