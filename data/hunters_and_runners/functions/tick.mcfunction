@@ -8,3 +8,6 @@ scoreboard players enable @a hnr.hunters.join
 scoreboard players enable @a hnr.runners.join
 scoreboard players enable @a hnr.information
 scoreboard players enable @a hnr.track_player
+
+#> Remove any rouge tracking compasses
+kill @e[nbt={Item:{tag:{compass_type:"tracking_device"}}}]
