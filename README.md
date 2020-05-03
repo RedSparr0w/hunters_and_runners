@@ -18,9 +18,11 @@ View settings/select a team:
 ```
 /trigger hnr.information
 ```
+<br/>![hnr.information](https://i.imgur.com/KtSVCfb.png)
 
 ### Hunters:
-Drop your compass to see a list of players to track.
+Drop your compass to see a list of Runners to track.
+<br/>![list example](https://i.imgur.com/ZNQ7jr5.png)
 
 ### Runners:
 Survive.
