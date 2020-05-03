@@ -23,9 +23,9 @@ tag @a[tag=tracking] remove tracking
 execute in minecraft:overworld run data modify block 0 1 1 Items[] set from storage hnr:compass Items[]
 
 #> Replace "tracking_device" in offhand, mainhand and last hotbar slot, updating Runner position
-execute in minecraft:overworld run loot replace entity @s[nbt={SelectedItem:{tag:{compass_type:"tracking_device"}}}] weapon.mainhand mine 0 1 1 air{drop_contents:1b}
-execute in minecraft:overworld run loot replace entity @s[nbt={Inventory:[{Slot:-106b,tag:{compass_type:"tracking_device"}}]}] weapon.offhand mine 0 1 1 air{drop_contents:1b}
-execute in minecraft:overworld run loot replace entity @s[nbt={Inventory:[{Slot:8b,tag:{compass_type:"tracking_device"}}]}] hotbar.8 mine 0 1 1 air{drop_contents:1b}
+execute in minecraft:overworld run loot replace entity @s[nbt={SelectedItem:{tag:{compass_type:"tracking_device"}}}] weapon.mainhand 1 mine 0 1 1 air{drop_contents:1b}
+execute in minecraft:overworld run loot replace entity @s[nbt={Inventory:[{Slot:-106b,tag:{compass_type:"tracking_device"}}]}] weapon.offhand 1 mine 0 1 1 air{drop_contents:1b}
+execute in minecraft:overworld run loot replace entity @s[nbt={Inventory:[{Slot:8b,tag:{compass_type:"tracking_device"}}]}] hotbar.8 1 mine 0 1 1 air{drop_contents:1b}
 
 #> Remove hnr:compass and block items
 execute in minecraft:overworld run data remove storage hnr:compass Items
