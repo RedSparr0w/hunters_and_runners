@@ -7,7 +7,8 @@ Made for Java Edition 1.16+
 https://github.com/RedSparr0w/hunters_and_runners/releases/latest/download/hunters_and_runners.zip
 
 ## Information:
-The closest Runner to the Hunter will be tracked.
+The closest Runner to the Hunter will be tracked by default.
+Drop your compass to view a list of runners to track.
 Multiple Hunters and Runners are supported.
 Runners can be tracked in the Overworld, Nether and End dimensions.
 
@@ -18,21 +19,34 @@ View settings/select a team:
 /trigger hnr.information
 ```
 
-_If you die as a Hunter, just re-select the Hunter team to get a new compass._
+### Hunters:
+Drop your compass to see a list of players to track.
+
+### Runners:
+Survive.
 
 ## Settings:
 _Can only be changed by ops_
 
 Show Runner last position
 - When enabled, the compass will show the last position the runner was located before changing dimensions.
-- When disabled, the compass will show as if there is no target
+- When disabled, the compass will show as if there is no target when the runner changes dimensions.
 
 Rename compass ot match Runner:
-- When enabled, the compass will have the same name as the runner currently being tracked
-- When disabled, the compass will be called `Tracking Compass`
+- When enabled, the compass will have the same name as the Runner currently being tracked.
+- When disabled, the compass will be called `Tracking Compass`.
 
 Nearby Runners should glow:
-- When enabled, Runners within 15 blocks of a Hunter will glow
+- When enabled, Runners within 15 blocks of a Hunter will glow.
 
 Nearby Hunters should glow:
-- When enabled, Hunters within 15 blocks of a Runner will glow
+- When enabled, Hunters within 15 blocks of a Runner will glow.
+
+On Runners death:
+- Do nothing, The Runner will be able to respawn as normal, nothing will change.
+- Become Spectator, The Runner will be changed to spectator gamemode.
+- Become Hunter, The Runner will be move to the Hunters team.
+
+Runner headstart timer:
+- None, you will all be positioned nearby, and the hunt begins immediately
+- 10, 30, 60s, The Hunters will be given blindness and unable to move for the specified amount of time.
