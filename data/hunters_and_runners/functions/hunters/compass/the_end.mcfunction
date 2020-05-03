@@ -6,7 +6,8 @@ execute in minecraft:overworld run data modify storage hnr:compass Items[].Slot 
 execute in minecraft:overworld run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
 
 #> updates x, y and z positions of the compass
-tag @a[team=runners,limit=1,sort=nearest,nbt={Dimension:1}] add tracking
+function hunters_and_runners:hunters/track_player
+execute unless entity @a[tag=tracking] run tag @a[team=runners,limit=1,sort=nearest,nbt={Dimension:1}] add tracking
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run scoreboard players get @a[tag=tracking,limit=1,sort=nearest] hnr.xpos
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Y int 1 run scoreboard players get @a[tag=tracking,limit=1,sort=nearest] hnr.ypos
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.Z int 1 run scoreboard players get @a[tag=tracking,limit=1,sort=nearest] hnr.zpos

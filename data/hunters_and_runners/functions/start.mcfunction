@@ -4,6 +4,9 @@ gamemode survival @a[team=runners]
 tp @a @s
 spreadplayers ~ ~ 0 10 false @a
 
+function hunters_and_runners:game/refresh
+function hunters_and_runners:runners/id/update
+
 effect clear @a
 
 effect give @a minecraft:saturation 3 255 true
