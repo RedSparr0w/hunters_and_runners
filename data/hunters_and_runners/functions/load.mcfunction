@@ -15,16 +15,18 @@ scoreboard objectives add hnr.zpos dummy
 scoreboard objectives add hnr.runners.hp health
 ##> Total players in each team
 scoreboard objectives add hnr.teams.amount dummy
-##> Tracking specific Runners
-scoreboard objectives add hnr.tracking_id dummy
 ##> Dummy scoreboard for temp variables
 scoreboard objectives add hnr.dummy dummy
 
 #> Add triggers
+##> Show the menu
 scoreboard objectives add hnr.information trigger
+##> Join the Hunters team
 scoreboard objectives add hnr.hunters.join trigger
+##> Join the Runners team
 scoreboard objectives add hnr.runners.join trigger
-scoreboard objectives add hnr.track_player trigger
+##> Tracking specific Runners
+scoreboard objectives add hnr.tracking_id trigger
 
 #> Add teams
 team add hunters
