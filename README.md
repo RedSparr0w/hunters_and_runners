@@ -34,7 +34,7 @@ Show Runner last position
 - When enabled, the compass will show the last position the runner was located before changing dimensions.
 - When disabled, the compass will show as if there is no target when the runner changes dimensions.
 
-Rename compass ot match Runner:
+Rename compass to match Runner:
 - When enabled, the compass will have the same name as the Runner currently being tracked.
 - When disabled, the compass will be called `Tracking Compass`.
 
