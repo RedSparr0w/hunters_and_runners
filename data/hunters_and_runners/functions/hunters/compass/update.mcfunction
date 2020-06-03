@@ -3,12 +3,12 @@ execute in minecraft:overworld run data modify storage hnr:compass Items[] set f
 execute in minecraft:overworld run data modify storage hnr:compass Items[].Slot set value 0b
 
 #> Set dimension to our current dimension
-execute in minecraft:overworld if entity @s[nbt={Dimension:0}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
-execute in minecraft:overworld if entity @s[nbt={Dimension:-1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
-execute in minecraft:overworld if entity @s[nbt={Dimension:1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
-execute if entity @s[team=hunters,nbt={Dimension:0}] unless entity @a[tag=tracking,nbt={Dimension:0}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
-execute if entity @s[team=hunters,nbt={Dimension:-1}] unless entity @a[tag=tracking,nbt={Dimension:-1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
-execute if entity @s[team=hunters,nbt={Dimension:1}] unless entity @a[tag=tracking,nbt={Dimension:1}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
+execute in minecraft:overworld if entity @s[nbt={Dimension:"minecraft:overworld"}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:overworld"
+execute in minecraft:overworld if entity @s[nbt={Dimension:"minecraft:the_nether"}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
+execute in minecraft:overworld if entity @s[nbt={Dimension:"minecraft:the_end"}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
+execute if entity @s[team=hunters,nbt={Dimension:"minecraft:overworld"}] unless entity @a[tag=tracking,nbt={Dimension:"minecraft:overworld"}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
+execute if entity @s[team=hunters,nbt={Dimension:"minecraft:the_nether"}] unless entity @a[tag=tracking,nbt={Dimension:"minecraft:the_nether"}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_end"
+execute if entity @s[team=hunters,nbt={Dimension:"minecraft:the_end"}] unless entity @a[tag=tracking,nbt={Dimension:"minecraft:the_end"}] run data modify storage hnr:compass Items[].tag.LodestoneDimension set value "minecraft:the_nether"
 
 #> updates x, y and z positions of the compass
 execute in minecraft:overworld run execute store result storage hnr:compass Items[].tag.LodestonePos.X int 1 run data get entity @a[tag=tracking,limit=1] Pos[0]
