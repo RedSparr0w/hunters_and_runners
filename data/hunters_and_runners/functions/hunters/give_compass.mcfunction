@@ -1,6 +1,6 @@
 #> Give the hunters a compass to track players
 execute if data entity @s Inventory[{Slot:8b}] run give @s minecraft:compass{compass_type:"tracking_device",display:{Name:'[{"text":"Tracking Compass","italic":"false"}]',Lore:['{"text":"Detects players nearby.","color":"gray","italic": false}']},LodestoneTracked:0b}
-execute unless data entity @s Inventory[{Slot:8b}] run replaceitem entity @s hotbar.8 minecraft:compass{compass_type:"tracking_device",Enchantments:[{lvl:1,id:"minecraft:vanishing_curse"}],display:{Name:'[{"text":"Tracking Compass","italic":"false"}]',Lore:['{"text":"Detects players nearby.","color":"gray","italic": false}']},LodestoneTracked:0b}
+execute unless data entity @s Inventory[{Slot:8b}] run item replace entity @s hotbar.8 with minecraft:compass{compass_type:"tracking_device",Enchantments:[{lvl:1,id:"minecraft:vanishing_curse"}],display:{Name:'[{"text":"Tracking Compass","italic":"false"}]',Lore:['{"text":"Detects players nearby.","color":"gray","italic": false}']},LodestoneTracked:0b}
 
 tellraw @s [{"text":"===== Select Runner to track =====","color":"gold"}]
 tellraw @s [{"text":"[Nearest Runner]","color":"aqua","clickEvent":{"action":"run_command","value":"/trigger hnr.tracking_id set 0"},"hoverEvent":{"action":"show_text","value":{"text":"Track the nearest runner!"}}}]
