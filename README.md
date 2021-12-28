@@ -1,7 +1,7 @@
 # Hunters and Runners
 
 This datapack is similar to Dream and GeorgeNotFounds manhunt/speedrunner vs videos<br/>
-Made for Java Edition 1.17
+Made for Java Edition 1.18
 
 ## Download:
 https://github.com/RedSparr0w/hunters_and_runners/releases/latest/download/hunters_and_runners.zip
